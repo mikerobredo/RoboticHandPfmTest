@@ -1,0 +1,24 @@
+#######################################
+# Syntax Coloring Map ServPfm
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+ServPfm	KEYWORD1	ServPfm
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+attachPfm	KEYWORD2
+detachPfm	KEYWORD2
+writePfm	KEYWORD2
+readPfm	KEYWORD2
+attachedPfm	KEYWORD2
+writeMicrosecondsPfm	KEYWORD2
+readMicrosecondsPfm	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
