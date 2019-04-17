@@ -6,10 +6,13 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include "pfm.h"
+#include "wiring_private.h"//añadido
 
 
+//#include <avr/cores/arduino/wiring_pulse.c> // nofunciona
+//extern unsigned long pulseIn(uint8_t pin, uint8_t state, unsigned long ); no terminaba de ir
 //------------------------------------------------------------------------------
-///
+
 pfm::pfm(uint8_t p_nativo,
                       uint16_t t_on_us,
                       uint16_t t_off_minimo_us,
@@ -170,6 +173,18 @@ void pfm::ajustar_t_off(uint16_t nuevo_t_off_us)
     habilitar_canal();
     
 }
+unsigned long pfm::lecturadepulso(int pin)
+{
+    
+    return (pulseIn(13,LOW));
+   
+}
+int pfm::lectura_de_angulo(int pin)
+{
+    return map (lecturadepulso(pin), PFM_T_OFF_MAXIMO_US_POR_DEFECTO,PFM_T_OFF_MINIMO_US_POR_DEFECTO,0, 180);
+
+}
+
 
 //------------------------------------------------------------------------------
 ///

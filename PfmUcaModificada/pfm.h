@@ -4,13 +4,14 @@
 // 	Javier Villaverde Ramallo
 //	8 de Noviembre de 2017 
 /// \brief
+//modificado por Miguel Nuñez
 
 #ifndef PFM_H
 #define PFM_H
 
 #define PFM_CANAL_A                     (1u << 0)
 #define PFM_CANAL_B                     (1u << 1)
-#define PFM_T_ON_US_POR_DEFECTO         600u   // antes era 10u, se ha cambiado a 20u porque la interrupción tarda más tiempo y genera un pulso en alto inestable
+#define PFM_T_ON_US_POR_DEFECTO         15u   // antes era 10u, se ha cambiado a 20u porque la interrupción tarda más tiempo y genera un pulso en alto inestable
 #define PFM_T_OFF_MINIMO_US_POR_DEFECTO 1000u
 #define PFM_T_OFF_MAXIMO_US_POR_DEFECTO 2000u
 #define PFM_CPU_CLOCK_MHZ               16u
@@ -44,6 +45,9 @@ class pfm
 		void ajustar_t_off(uint16_t nuevo_t_off_us);
 		void ajustar_frecuencia(uint16_t frecuencia_hz);
         void manejador_compx_irq_(void);
+        //añadido
+        unsigned long lecturadepulso(int pin);
+        int lectura_de_angulo(int pin);
 };
 
 #if defined (__AVR_ATmega32U4__)
