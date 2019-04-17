@@ -1,4 +1,4 @@
-
+//NO SALIO BIEN NECESITAMOS UNA LIBRERIA NUEVA, PODEMOS USAR PULSEIN
 int input =10;
 unsigned long duration,grados,duration3;
 #include <ServPfm.h>
